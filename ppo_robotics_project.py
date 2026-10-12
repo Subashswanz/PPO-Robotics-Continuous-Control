@@ -11,14 +11,14 @@ The implementation includes:
 - Gaussian actor-critic neural network
 - PPO clipped surrogate objective
 - Generalized Advantage Estimation (GAE) with correct time-limit bootstrapping
-- Observation normalization (inside the environment) and advantage normalization
+- Fixed observation scaling to [-1, 1] (inside the environment) and advantage normalization
 - Mini-batch updates over multiple epochs
 - Training metrics (reward, losses, entropy, clip fraction, approx. KL) and plots
 - Deterministic evaluation against random and zero-torque baselines
 - Optional ablation study of clipping and GAE lambda across several seeds
 
 Setup:
-    pip install numpy torch matplotlib gymnasium
+    pip install -r requirements.txt     (Python 3.10+)
 Run:
     python ppo_robotics_project.py              # main training run + evaluation
     python ppo_robotics_project.py --ablation   # also run the clipping / GAE ablation
@@ -106,7 +106,7 @@ class CustomContinuousRobotJointEnv(GymBase):
             )
 
     def _get_obs(self) -> np.ndarray:
-        # Preprocessing / observation normalization: every feature lies in [-1, 1].
+        # Preprocessing / fixed observation scaling: every feature lies in [-1, 1].
         # Angles are encoded as (sin, cos) to avoid the discontinuity at +/- pi.
         # The target is given RELATIVE to the joint (sin/cos of the angle error),
         # like the fingertip-to-target vector in MuJoCo Reacher. An earlier version

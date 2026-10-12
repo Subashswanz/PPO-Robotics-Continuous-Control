@@ -1,0 +1,6 @@
+# Python 3.10+ (tested with Python 3.13)
+numpy>=1.24
+torch>=2.0
+matplotlib>=3.7
+gymnasium>=0.29
+imageio-ffmpeg>=0.4   # bundled ffmpeg for make_demo_video.py

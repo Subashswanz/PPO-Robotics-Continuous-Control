@@ -1,0 +1,57 @@
+Matplotlib is building the font cache; this may take a moment.
+Training main PPO agent: PPOConfig(seed=42, total_steps=204800, rollout_steps=512, learning_rate=0.0003, gamma=0.99, gae_lambda=0.95, clip_range=0.2, update_epochs=5, batch_size=64, value_coef=0.5, entropy_coef=0.0, max_grad_norm=0.5, hidden_size=64)
+step=  10240 episodes=   51 mean_reward_10=  115.11 value_loss=14.437 entropy=0.906 clip_frac=0.062
+step=  20480 episodes=  102 mean_reward_10=  133.05 value_loss=31.387 entropy=0.888 clip_frac=0.019
+step=  30720 episodes=  153 mean_reward_10=  177.76 value_loss=17.380 entropy=0.888 clip_frac=0.062
+step=  40960 episodes=  204 mean_reward_10=  183.55 value_loss=7.051 entropy=0.876 clip_frac=0.045
+step=  51200 episodes=  256 mean_reward_10=  151.97 value_loss=12.508 entropy=0.866 clip_frac=0.048
+step=  61440 episodes=  307 mean_reward_10=  153.00 value_loss=2.285 entropy=0.868 clip_frac=0.013
+step=  71680 episodes=  358 mean_reward_10=  174.57 value_loss=0.538 entropy=0.843 clip_frac=0.078
+step=  81920 episodes=  409 mean_reward_10=  182.85 value_loss=0.985 entropy=0.823 clip_frac=0.034
+step=  92160 episodes=  460 mean_reward_10=  180.38 value_loss=0.651 entropy=0.810 clip_frac=0.055
+step= 102400 episodes=  512 mean_reward_10=  177.76 value_loss=0.349 entropy=0.759 clip_frac=0.101
+step= 112640 episodes=  563 mean_reward_10=  195.06 value_loss=1.826 entropy=0.756 clip_frac=0.043
+step= 122880 episodes=  614 mean_reward_10=  220.44 value_loss=0.602 entropy=0.722 clip_frac=0.056
+step= 133120 episodes=  665 mean_reward_10=  215.35 value_loss=0.716 entropy=0.719 clip_frac=0.064
+step= 143360 episodes=  716 mean_reward_10=  213.59 value_loss=0.132 entropy=0.686 clip_frac=0.025
+step= 153600 episodes=  768 mean_reward_10=  226.63 value_loss=0.056 entropy=0.670 clip_frac=0.186
+step= 163840 episodes=  819 mean_reward_10=  234.92 value_loss=0.016 entropy=0.659 clip_frac=0.137
+step= 174080 episodes=  870 mean_reward_10=  218.60 value_loss=0.056 entropy=0.636 clip_frac=0.109
+step= 184320 episodes=  921 mean_reward_10=  225.40 value_loss=0.102 entropy=0.615 clip_frac=0.218
+step= 194560 episodes=  972 mean_reward_10=  226.62 value_loss=0.116 entropy=0.588 clip_frac=0.113
+step= 204800 episodes= 1024 mean_reward_10=  229.43 value_loss=0.241 entropy=0.562 clip_frac=0.078
+
+Training summary
+episodes: 1024
+total_steps: 204800
+first_50_mean_train_return: 104.45000745600626
+last_50_mean_train_return: 227.10971896288294
+first_50_mean_final_error_rad: 1.5408791212471382
+last_50_mean_final_error_rad: 0.024046236294099924
+eval_ppo_mean_return: 231.2324794636919
+eval_ppo_std_return: 14.668139058845465
+eval_ppo_mean_final_error_rad: 0.022967086874191515
+eval_ppo_success_rate: 1.0
+eval_random_mean_return: 116.34259472305011
+eval_random_std_return: 50.76950785853836
+eval_random_mean_final_error_rad: 1.440354047097154
+eval_random_success_rate: 0.04
+eval_zero_mean_return: 113.35922121142501
+eval_zero_std_return: 55.843426753663785
+eval_zero_mean_final_error_rad: 1.3989326276214131
+eval_zero_success_rate: 0.02
+
+Running ablation (this trains 12 agents)...
+  PPO (clip 0.2, lambda 0.95)      seed=1 eval_return= 230.36 eval_error=0.020 mean_approx_kl=0.0054
+  PPO (clip 0.2, lambda 0.95)      seed=2 eval_return= 231.84 eval_error=0.018 mean_approx_kl=0.0052
+  PPO (clip 0.2, lambda 0.95)      seed=3 eval_return= 226.82 eval_error=0.016 mean_approx_kl=0.0052
+  No clipping (clip 10)            seed=1 eval_return= 175.89 eval_error=0.547 mean_approx_kl=0.2435
+  No clipping (clip 10)            seed=2 eval_return= 199.84 eval_error=0.126 mean_approx_kl=0.0939
+  No clipping (clip 10)            seed=3 eval_return= 177.05 eval_error=0.513 mean_approx_kl=0.3818
+  Monte Carlo adv. (lambda 1.0)    seed=1 eval_return= 222.90 eval_error=0.030 mean_approx_kl=0.0036
+  Monte Carlo adv. (lambda 1.0)    seed=2 eval_return= 217.91 eval_error=0.027 mean_approx_kl=0.0030
+  Monte Carlo adv. (lambda 1.0)    seed=3 eval_return= 205.87 eval_error=0.039 mean_approx_kl=0.0041
+  One-step TD adv. (lambda 0)      seed=1 eval_return= 188.75 eval_error=0.130 mean_approx_kl=0.0103
+  One-step TD adv. (lambda 0)      seed=2 eval_return= 186.84 eval_error=0.306 mean_approx_kl=0.0065
+  One-step TD adv. (lambda 0)      seed=3 eval_return= 185.87 eval_error=0.277 mean_approx_kl=0.0100
+Outputs saved to: /Users/subashkambala/Desktop/PHD_Projest/AI_830_Week_7/PPO_project/PPO-Robotics-Continuous-Control/outputs
